@@ -21,7 +21,12 @@ try {
                 break;
         }
     }
-    $status_signed_invoices = true;
+    if (
+        !is_null($cert) && $cert != '' &&
+        !is_null($privatekey) && $privatekey != ''
+    ) {
+        $status_signed_invoices = true;
+    }
 } catch (\Exception $e) {
     echo $e->getMessage();
     exit();
