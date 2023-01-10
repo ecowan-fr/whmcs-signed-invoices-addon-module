@@ -5,7 +5,7 @@ $status_signed_invoices = false;
 
 $dataFromModule = localAPI(
     'GetModuleConfigurationParameters',
-    ['moduleType' => 'addons', 'moduleName' => 'signed_invoices']
+    ['moduleType' => 'addon', 'moduleName' => 'Signed Invoices by Ecowan']
 );
 
 var_dump($dataFromModule);
