@@ -77,10 +77,10 @@ function signed_invoices_output($vars) {
 
     try {
         $data = Capsule::table('mod_signedinvoices')->first();
-        $cert = $data['cert'];
-        $key = $data['key'];
-        $extra = $data['extra'];
-        $keypass = $data['keypass'];
+        $cert = $data->cert;
+        $key = $data->key;
+        $extra = $data->extra;
+        $keypass = $data->keypass;
         var_dump($data);
     } catch (\Exception $e) {
         echo $e->getMessage();
