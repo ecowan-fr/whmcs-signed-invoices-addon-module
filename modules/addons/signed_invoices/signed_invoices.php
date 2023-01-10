@@ -15,7 +15,7 @@ function signed_invoices_config() {
     return $configarray;
 }
 
-function addonmodule_activate() {
+function signed_invoices_activate() {
     // Create custom tables and schema required by your module
     try {
         Capsule::schema()
@@ -43,7 +43,7 @@ function addonmodule_activate() {
     }
 }
 
-function addonmodule_deactivate() {
+function signed_invoices_deactivate() {
     // Undo any database and schema modifications made by your module here
     try {
         Capsule::schema()
@@ -63,7 +63,7 @@ function addonmodule_deactivate() {
     }
 }
 
-function signedinvoices_output($vars) {
+function signed_invoices_output($vars) {
 
     var_dump($vars);
     exit();
