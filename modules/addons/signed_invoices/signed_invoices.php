@@ -25,7 +25,7 @@ function signed_invoices_config() {
                 "Size" => "25"
             ),
             "certificate" => array(
-                "FriendlyName" => "Your Certificate",
+                "FriendlyName" => "Certificate",
                 "Type" => "textarea",
                 "Rows" => "10",
                 "Cols" => "50",
