@@ -36,18 +36,3 @@ function signed_invoices_config() {
     );
     return $configarray;
 }
-
-function signed_invoices_activate() {
-}
-
-function signed_invoices_deactivate() {
-}
-
-function signed_invoices_output($vars) {
-}
-
-function signed_invoices_clientarea($vars) {
-}
-
-function signed_invoices_upgrade($vars) {
-}
