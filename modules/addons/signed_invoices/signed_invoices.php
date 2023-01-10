@@ -1,5 +1,5 @@
 <?php
-function demo_config() {
+function signed_invoices_config() {
     $configarray = array(
         "name" => "Signed Invoices by Ecowan",
         "description" => "Addon for signed invoices with a certificate",
