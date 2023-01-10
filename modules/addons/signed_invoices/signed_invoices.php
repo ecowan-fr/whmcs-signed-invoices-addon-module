@@ -88,6 +88,9 @@ function signed_invoices_output($vars) {
     }
 
     try {
+        $d = Capsule::table('mod_signedinvoices')->get();
+        var_dump($d);
+        exit();
         foreach (Capsule::table('mod_signedinvoices')->get() as $key => $value) {
             switch ($value['name']) {
                 case "cert":
