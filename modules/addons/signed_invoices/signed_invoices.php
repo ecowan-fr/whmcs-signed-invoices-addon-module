@@ -67,44 +67,10 @@ function signed_invoices_deactivate() {
 
 function signed_invoices_output($vars) {
 
-    var_dump($vars);
-    exit();
-
     $modulelink = $vars['modulelink'];
     $version = $vars['version'];
 
-    if (isset($_REQUEST['a'])) {
-        foreach ($_POST as $k => $v) {
-            if ($k != "token") {
-                if ($k == "keypass") {
-                    $v = encrypt($v);
-                }
-                $d = update_query("mod_signedinvoices", array("value" => $v), "name='$k'");
-            }
-        }
-        $successmsg = "Changes Saved.";
-    }
-    $data = select_query("mod_signedinvoices", "name, value", array());
-    while ($r = mysql_fetch_array($data)) {
-        switch ($r['name']) {
-            case "cert":
-                $cert = $r['value'];
-                break;
-            case "key":
-                $key = $r['value'];
-                break;
-            case "keypass":
-                $keypass = decrypt($r['value']);
-                break;
-            case "extra":
-                $extra = $r['value'];
-                break;
-        }
-    }
-    if (isset($successmsg)) {
-        print '<div class="successbox">' . $successmsg . '</div>';
-    }
-    print '<div id="tab0box" class="tabbox">
+    echo '<div id="tab0box" class="tabbox">
 				<div id="tab_content">
 					<h3>Configuration</h3>
 					<form method="POST" action="' . $modulelink . '&a=save" name="configfrm">
@@ -137,5 +103,5 @@ function signed_invoices_output($vars) {
 				</div>
 			</div>
 			<br />
-			<p align="left"><h5>Signed Invoices was written by <a href="mailto:frank@franksworld.org">Frank Laszlo</a><br />Version ' . $version . '</h5></p>';
+			<p align="left"><h5>Signed Invoices was written by <a href="mailto:hello@ecowan.fr">Ecowan SAS</a><br />Version ' . $version . '</h5></p>';
 }
