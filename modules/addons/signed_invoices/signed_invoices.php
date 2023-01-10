@@ -31,12 +31,11 @@ function signed_invoices_activate() {
                 }
             );
 
-        Capsule::table('mod_signedinvoices')->insert(
-            ['name' => 'cert'],
-            ['name' => 'key'],
-            ['name' => 'keypass'],
-            ['name' => 'extra']
-        );
+        Capsule::table('mod_signedinvoices')
+            ->insert(['name' => 'cert'])
+            ->insert(['name' => 'key'])
+            ->insert(['name' => 'keypass'])
+            ->insert(['name' => 'extra']);
 
         return [
             // Supported values here include: success, error or info
