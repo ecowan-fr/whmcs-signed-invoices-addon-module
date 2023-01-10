@@ -75,13 +75,24 @@ function signed_invoices_output($vars) {
     $modulelink = $vars['modulelink'];
     $version = $vars['version'];
 
+    if (isset($_REQUEST['a'])) {
+        foreach ($_POST as $k => $v) {
+            if ($k != "token") {
+                if ($k == "keypass") {
+                    $v = openssl_encrypt($v, 'AES-256-CTR', 'sf64g654sd6f4sdf4');
+                }
+                Capsule::table('mod_signedinvoices')->where('name', $k)->update(['value' => $v]);
+            }
+        }
+        $successmsg = "Changes Saved.";
+    }
+
     try {
         $data = Capsule::table('mod_signedinvoices')->first();
         $cert = $data->cert;
-        $key = $data->key;
+        $key = openssl_decrypt($data->key, 'AES-256-CTR', 'sf64g654sd6f4sdf4');
         $extra = $data->extra;
         $keypass = $data->keypass;
-        var_dump($data);
     } catch (\Exception $e) {
         echo $e->getMessage();
         exit();
