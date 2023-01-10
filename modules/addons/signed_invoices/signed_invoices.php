@@ -89,6 +89,7 @@ function signed_invoices_output($vars) {
 
     try {
         $data = Capsule::table('mod_signedinvoices')->first();
+        var_dump($data);
         $cert = $data->cert;
         $key = openssl_decrypt($data->key, 'AES-256-CTR', 'sf64g654sd6f4sdf4');
         $extra = $data->extra;
