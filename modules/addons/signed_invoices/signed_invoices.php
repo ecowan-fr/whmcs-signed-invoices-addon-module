@@ -89,7 +89,7 @@ function signed_invoices_output($vars) {
 
     try {
         foreach (Capsule::table('mod_signedinvoices')->get() as $key => $value) {
-            switch ($value->value) {
+            switch ($value->name) {
                 case "cert":
                     $cert = $value->value;
                     break;
