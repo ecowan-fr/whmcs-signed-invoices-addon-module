@@ -19,7 +19,7 @@ Copy files on your root WHMCS system and active Addon on your settings.
 // _ BEGIN SIGN INVOICES CODE BLOCK _
 require_once ROOTDIR.'/modules/addons/signed_invoices/si_include.php';
 if ($status_signed_invoices) {
-$pdf->setSignature($certificat, $privateKey, $passPhrasePrivateKey);
+    $pdf->setSignature($cert,$privatekey,$keypass,$extra);
 } else {
 	logActivity('Impossible to sign invoices');
 }
