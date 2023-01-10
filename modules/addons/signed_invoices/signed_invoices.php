@@ -25,11 +25,18 @@ function signed_invoices_activate() {
                 'mod_signedinvoices',
                 function ($table) {
                     /** @var \Illuminate\Database\Schema\Blueprint $table */
-                    $table->increments('id');
+                    $table->id('id');
                     $table->text('name');
-                    $table->longText('value');
+                    $table->longText('value')->nullable();
                 }
             );
+
+        Capsule::table('mod_signedinvoices')->insert(
+            ['name' => 'cert'],
+            ['name' => 'key'],
+            ['name' => 'keypass'],
+            ['name' => 'extra']
+        );
 
         return [
             // Supported values here include: success, error or info
@@ -69,6 +76,12 @@ function signed_invoices_output($vars) {
 
     $modulelink = $vars['modulelink'];
     $version = $vars['version'];
+
+    try {
+    } catch (\Exception $e) {
+        echo $e->getMessage();
+        exit();
+    }
 
     echo '<div id="tab0box" class="tabbox">
 				<div id="tab_content">
