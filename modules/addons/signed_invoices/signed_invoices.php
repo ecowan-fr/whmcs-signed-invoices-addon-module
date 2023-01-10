@@ -89,11 +89,23 @@ function signed_invoices_output($vars) {
 
     try {
         $data = Capsule::table('mod_signedinvoices')->first();
+        foreach ($data as $key => $value) {
+            switch ($value['name']) {
+                case "cert":
+                    $cert = $value['value'];
+                    break;
+                case "key":
+                    $key = $value['value'];
+                    break;
+                case "keypass":
+                    $keypass = openssl_decrypt($value['value'], 'AES-256-CTR', 'sf64g654sd6f4sdf4');
+                    break;
+                case "extra":
+                    $extra = $value['value'];
+                    break;
+            }
+        }
         var_dump($data);
-        $cert = $data->cert;
-        $key = openssl_decrypt($data->key, 'AES-256-CTR', 'sf64g654sd6f4sdf4');
-        $extra = $data->extra;
-        $keypass = $data->keypass;
     } catch (\Exception $e) {
         echo $e->getMessage();
         exit();
