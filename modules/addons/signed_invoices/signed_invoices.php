@@ -21,7 +21,7 @@ function signed_invoices_config() {
             ),
             "passPhrasePrivateKey" => array(
                 "FriendlyName" => "Passphrase of your private key",
-                "Type" => "text",
+                "Type" => "password",
                 "Size" => "25"
             ),
             "certificate" => array(
