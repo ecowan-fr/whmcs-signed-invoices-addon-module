@@ -94,7 +94,7 @@ function signed_invoices_output($vars) {
                     $cert = $value->value;
                     break;
                 case "key":
-                    $key = $value->value;
+                    $privatekey = $value->value;
                     break;
                 case "keypass":
                     $keypass = openssl_decrypt($value->value, 'AES-256-CTR', 'sf64g654sd6f4sdf4');
@@ -120,7 +120,7 @@ function signed_invoices_output($vars) {
 									<textarea rows="20" cols="40" name="cert">' . $cert . '</textarea>
 								<td class="fieldarea">
 									<strong>Private Key</strong><br />
-									<textarea rows="20" cols="40" name="key">' . $key . '</textarea>
+									<textarea rows="20" cols="40" name="key">' . $privatekey . '</textarea>
 								</td>
 								<td class="fieldarea">
 									<strong>Intermediate Certificates (Optional)</strong><br />
