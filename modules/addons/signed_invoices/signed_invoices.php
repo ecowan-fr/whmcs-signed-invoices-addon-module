@@ -76,6 +76,8 @@ function signed_invoices_output($vars) {
     $version = $vars['version'];
 
     try {
+        $data = Capsule::table('mod_signedinvoices')->first();
+        var_dump($data);
     } catch (\Exception $e) {
         echo $e->getMessage();
         exit();
