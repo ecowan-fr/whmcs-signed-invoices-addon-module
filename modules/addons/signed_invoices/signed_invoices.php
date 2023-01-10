@@ -7,16 +7,24 @@ function signed_invoices_config() {
         "author" => "Ecowan SAS",
         "fields" => array(
             "privateKey" => array(
-                "FriendlyName" => "Private Key", "Type" => "textarea", "Rows" => "10",
-                "Cols" => "50", "Description" => "You private key", "Default" => "-----BEGIN PRIVATE KEY-----",
+                "FriendlyName" => "Private Key",
+                "Type" => "textarea",
+                "Rows" => "10",
+                "Cols" => "50",
+                "Default" => "-----BEGIN PRIVATE KEY-----"
             ),
             "passPhrasePrivateKey" => array(
-                "FriendlyName" => "Passphrase of your private key", "Type" => "text", "Size" => "25",
-                "Description" => "Textbox", "Default" => "Example",
+                "FriendlyName" => "Passphrase of your private key",
+                "Type" => "text",
+                "Size" => "25"
             ),
             "certificate" => array(
-                "FriendlyName" => "Your Certificate", "Type" => "textarea", "Rows" => "10",
-                "Cols" => "50", "Description" => "You certificate with .pem extention", "Default" => "-----BEGIN CERTIFICATE-----",
+                "FriendlyName" => "Your Certificate",
+                "Type" => "textarea",
+                "Rows" => "10",
+                "Cols" => "50",
+                "Description" => "You certificate with .pem extention",
+                "Default" => "-----BEGIN CERTIFICATE-----"
             ),
         )
     );
