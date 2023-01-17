@@ -1,4 +1,4 @@
-# whmcs-stancer-gateway-module
+# whmcs-signed-invoices-addon-module
 
 This is a WHMCS Module Addon for sign invoices with a certificate
 
